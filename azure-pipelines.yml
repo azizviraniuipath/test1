@@ -16,12 +16,16 @@ steps:
     projectJsonPath: '$(Build.SourcesDirectory)'
     orchestratorConnection: 'UiPathConnection'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
-    traceLevel: 'Information'
-
+  env:
+    OrchestratorClientIdOverride: '$(ClientId)'
+    OrchestratorAuthorizationUriOverride: '$(AuthUriOverride)'
 
 - task: UiPathDeploy@2
   inputs:
     orchestratorConnection: 'UiPathConnection'
     packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
-    folderName: 'Shared'
+    folderName: '$(FolderName)'
     entryPoints: 'Main.xaml'
+  env:
+    OrchestratorClientIdOverride: '$(ClientId)'
+    OrchestratorAuthorizationUriOverride: '$(AuthUriOverride)'
