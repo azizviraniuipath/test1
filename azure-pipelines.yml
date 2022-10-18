@@ -24,4 +24,4 @@ steps:
     orchestratorConnection: 'UiPathConnection'
     packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
     folderName: 'Shared'
-
+    entryPoints: 'Main.xaml'
