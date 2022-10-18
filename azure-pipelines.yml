@@ -9,8 +9,7 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
-variables:
- - group: Variables
+
 
 steps:
 - task: UiPathDeploy@2
