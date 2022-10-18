@@ -13,7 +13,7 @@ steps:
 - task: UiPathPack@2
   inputs:
     versionType: 'AutoVersion'
-    projectJsonPath: 'C:\Users\aziz.virani\OneDrive - UiPath\Desktop\av\Training\Version Control\Jenkins\DemoTest'
+    projectJsonPath: '$(Build.SourcesDirectory)'
     orchestratorConnection: 'UiPathConnection'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
     traceLevel: 'Information'
