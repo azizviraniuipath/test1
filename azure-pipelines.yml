@@ -9,6 +9,7 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
+steps:
 - task: UiPathPack@2
   inputs:
     versionType: 'AutoVersion'
@@ -17,7 +18,7 @@ pool:
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
     traceLevel: 'Information'
 
-steps:
+
 - task: UiPathDeploy@2
   inputs:
     orchestratorConnection: 'UiPathConnection'
